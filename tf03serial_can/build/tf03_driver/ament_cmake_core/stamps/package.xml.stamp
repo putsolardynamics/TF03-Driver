@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>tf03_driver</name>
+  <version>0.0.1</version>
+  <description>The tf03_driver provides ROS interface for tf_03 range sensor produced by Benewake.</description>
+  <maintainer email="support@husarion.com">Husarion</maintainer>
+  <license>Apache License 2.0</license>
+
+  <author email="lukasz.mitka@husarion.com">Łukasz Mitka</author>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <build_depend>libserial</build_depend>
+  <exec_depend>libserial</exec_depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+    
+  </export>
+
+</package>
+  

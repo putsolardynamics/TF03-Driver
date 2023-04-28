@@ -1,0 +1,214 @@
+In file included from [01m[K/home/ws/src/tf03_driver/src/tf03_node.cpp:2[m[K:
+[01m[K/home/ws/src/tf03_driver/include/TF03.h:63:10:[m[K [01;35m[Kwarning: [m[Kuse of ‘[01m[Kauto[m[K’ in parameter declaration only available with ‘[01m[K-fconcepts[m[K’
+   63 |     TF03([01;35m[Kauto[m[K node = rclcpp::Node::make_shared("tf03_node"));
+      |          [01;35m[K^~~~[m[K
+[01m[K/home/ws/src/tf03_driver/include/TF03.h:110:5:[m[K [01;31m[Kerror: [m[K‘[01m[KSerialPort[m[K’ does not name a type
+  110 |     [01;31m[KSerialPort[m[K *tf03_serial_port;
+      |     [01;31m[K^~~~~~~~~~[m[K
+In file included from [01m[K/home/ws/src/tf03_driver/src/TF03.cpp:1[m[K:
+[01m[K/home/ws/src/tf03_driver/include/TF03.h:63:10:[m[K [01;35m[Kwarning: [m[Kuse of ‘[01m[Kauto[m[K’ in parameter declaration only available with ‘[01m[K-fconcepts[m[K’
+   63 |     TF03([01;35m[Kauto[m[K node = rclcpp::Node::make_shared("tf03_node"));
+      |          [01;35m[K^~~~[m[K
+[01m[K/home/ws/src/tf03_driver/include/TF03.h:110:5:[m[K [01;31m[Kerror: [m[K‘[01m[KSerialPort[m[K’ does not name a type
+  110 |     [01;31m[KSerialPort[m[K *tf03_serial_port;
+      |     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:4:12:[m[K [01;35m[Kwarning: [m[Kuse of ‘[01m[Kauto[m[K’ in parameter declaration only available with ‘[01m[K-fconcepts[m[K’
+    4 | TF03::TF03([01;35m[Kauto[m[K node = rclcpp::Node::make_shared())
+      |            [01;35m[K^~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:4:1:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[KTF03::TF03(auto:13)[m[K’ may not have default arguments [[01;31m[K-fpermissive[m[K]
+    4 | [01;31m[KTF03[m[K::TF03(auto node = rclcpp::Node::make_shared())
+      | [01;31m[K^~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:[m[K In constructor ‘[01m[KTF03::TF03(auto:13)[m[K’:
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:9:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>[m[K’ {aka ‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’} has no member named ‘[01m[Kparam[m[K’
+    9 |     node_handle.[01;31m[Kparam[m[K<std::string>("serial_port", serial_port, "/dev/ttyUSB0");
+      |                 [01;31m[K^~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:9:34:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+    9 |     node_handle.param<std::string[01;31m[K>[m[K("serial_port", serial_port, "/dev/ttyUSB0");
+      |                                  [01;31m[K^[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:10:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>[m[K’ {aka ‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’} has no member named ‘[01m[Kparam[m[K’
+   10 |     node_handle.[01;31m[Kparam[m[K<std::string>("can_device", can_device, "panther_can");
+      |                 [01;31m[K^~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:10:34:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   10 |     node_handle.param<std::string[01;31m[K>[m[K("can_device", can_device, "panther_can");
+      |                                  [01;31m[K^[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:11:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>[m[K’ {aka ‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’} has no member named ‘[01m[KgetParam[m[K’
+   11 |     node_handle.[01;31m[KgetParam[m[K("can_transmit_id", can_transmit_id);
+      |                 [01;31m[K^~~~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:12:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>[m[K’ {aka ‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’} has no member named ‘[01m[KgetParam[m[K’
+   12 |     node_handle.[01;31m[KgetParam[m[K("sensor_frame", sensor_frame);
+      |                 [01;31m[K^~~~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:13:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>[m[K’ {aka ‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’} has no member named ‘[01m[Kparam[m[K’
+   13 |     node_handle.[01;31m[Kparam[m[K<int>("can_receive_id", can_receive_id, 0x3003); //HEX 0x3003 = DEC 12291
+      |                 [01;31m[K^~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:13:23:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kint[m[K’
+   13 |     node_handle.param<[01;31m[Kint[m[K>("can_receive_id", can_receive_id, 0x3003); //HEX 0x3003 = DEC 12291
+      |                       [01;31m[K^~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:14:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>[m[K’ {aka ‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’} has no member named ‘[01m[Kparam[m[K’
+   14 |     node_handle.[01;31m[Kparam[m[K<std::string>("sensor_interface", sensor_interface, "serial");
+      |                 [01;31m[K^~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:14:34:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   14 |     node_handle.param<std::string[01;31m[K>[m[K("sensor_interface", sensor_interface, "serial");
+      |                                  [01;31m[K^[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:16:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>[m[K’ {aka ‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’} has no member named ‘[01m[Kparam[m[K’
+   16 |     node_handle.[01;31m[Kparam[m[K<bool>("print_version", print_version, false);
+      |                 [01;31m[K^~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:16:23:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kbool[m[K’
+   16 |     node_handle.param<[01;31m[Kbool[m[K>("print_version", print_version, false);
+      |                       [01;31m[K^~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:17:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>[m[K’ {aka ‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’} has no member named ‘[01m[Kparam[m[K’
+   17 |     node_handle.[01;31m[Kparam[m[K<std::string>("set_output_format", set_output_format, "");
+      |                 [01;31m[K^~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:17:34:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   17 |     node_handle.param<std::string[01;31m[K>[m[K("set_output_format", set_output_format, "");
+      |                                  [01;31m[K^[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:18:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>[m[K’ {aka ‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’} has no member named ‘[01m[Kparam[m[K’
+   18 |     node_handle.[01;31m[Kparam[m[K<int>("set_transmit_can_id", set_transmit_can_id, 0);
+      |                 [01;31m[K^~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:18:23:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kint[m[K’
+   18 |     node_handle.param<[01;31m[Kint[m[K>("set_transmit_can_id", set_transmit_can_id, 0);
+      |                       [01;31m[K^~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:19:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>[m[K’ {aka ‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’} has no member named ‘[01m[Kparam[m[K’
+   19 |     node_handle.[01;31m[Kparam[m[K<int>("set_receive_can_id", set_receive_can_id, 0);
+      |                 [01;31m[K^~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:19:23:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kint[m[K’
+   19 |     node_handle.param<[01;31m[Kint[m[K>("set_receive_can_id", set_receive_can_id, 0);
+      |                       [01;31m[K^~~[m[K
+In file included from [01m[K/opt/ros/foxy/include/rclcpp/service.hpp:34[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/callback_group.hpp:25[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executor.hpp:33[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+                 from [01m[K/home/ws/src/tf03_driver/include/TF03.h:11[m[K,
+                 from [01m[K/home/ws/src/tf03_driver/src/TF03.cpp:1[m[K:
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:24:21:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ‘[01m[Kget_logger[m[K’ that depend on a template parameter, so a declaration of ‘[01m[Kget_logger[m[K’ must be available [[01;31m[K-fpermissive[m[K]
+   24 |         RCLCPP_INFO([01;31m[Kget_logger[m[K(),"Print tf_03 version");
+      |                     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:24:21:[m[K [01;36m[Knote: [m[K(if you use ‘[01m[K-fpermissive[m[K’, G++ will accept your code, but allowing the use of an undeclared name is deprecated)
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:24:21:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ‘[01m[Kget_logger[m[K’ that depend on a template parameter, so a declaration of ‘[01m[Kget_logger[m[K’ must be available [[01;31m[K-fpermissive[m[K]
+In file included from [01m[K/opt/ros/foxy/include/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/callback_group.hpp:23[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executor.hpp:33[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+                 from [01m[K/home/ws/src/tf03_driver/include/TF03.h:11[m[K,
+                 from [01m[K/home/ws/src/tf03_driver/src/TF03.cpp:1[m[K:
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:24:21:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ‘[01m[Kget_logger[m[K’ that depend on a template parameter, so a declaration of ‘[01m[Kget_logger[m[K’ must be available [[01;31m[K-fpermissive[m[K]
+   24 |         RCLCPP_INFO([01;31m[Kget_logger[m[K(),"Print tf_03 version");
+      |                     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:24:21:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ‘[01m[Kget_logger[m[K’ that depend on a template parameter, so a declaration of ‘[01m[Kget_logger[m[K’ must be available [[01;31m[K-fpermissive[m[K]
+   24 |         RCLCPP_INFO([01;31m[Kget_logger[m[K(),"Print tf_03 version");
+      |                     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:111:51:[m[K [01;31m[Kerror: [m[K‘[01m[Know[m[K’ is not a member of ‘[01m[Krclcpp::Time[m[K’
+  111 |                 command_timestamp = rclcpp::Time::[01;31m[Know[m[K();
+      |                                                   [01;31m[K^~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:114:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+  114 |             else if (command_timestamp + [01;31m[Kros[m[K::Duration(2) < rclcpp::Time::now())
+      |                                          [01;31m[K^~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:114:75:[m[K [01;31m[Kerror: [m[K‘[01m[Know[m[K’ is not a member of ‘[01m[Krclcpp::Time[m[K’
+  114 |             else if (command_timestamp + ros::Duration(2) < rclcpp::Time::[01;31m[Know[m[K())
+      |                                                                           [01;31m[K^~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:133:45:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kauto[m[K’
+  133 |             sensor_pub.insert(std::pair<int,[01;31m[Kauto[m[K>(s.first, node_handle->create_publisher<sensor_msgs::msg::Range>("sensor/" + sensor.second, 1)));
+      |                                             [01;31m[K^~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:133:49:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+  133 |             sensor_pub.insert(std::pair<int,auto[01;31m[K>[m[K(s.first, node_handle->create_publisher<sensor_msgs::msg::Range>("sensor/" + sensor.second, 1)));
+      |                                                 [01;31m[K^[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:133:51:[m[K [01;31m[Kerror: [m[K‘[01m[Ks[m[K’ was not declared in this scope
+  133 |             sensor_pub.insert(std::pair<int,auto>([01;31m[Ks[m[K.first, node_handle->create_publisher<sensor_msgs::msg::Range>("sensor/" + sensor.second, 1)));
+      |                                                   [01;31m[K^[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:[m[K In destructor ‘[01m[KTF03::~TF03()[m[K’:
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:153:13:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf03_serial_port[m[K’ was not declared in this scope; did you mean ‘[01m[Kserial_port[m[K’?
+  153 |         if ([01;31m[Ktf03_serial_port[m[K->IsOpen())
+      |             [01;31m[K^~~~~~~~~~~~~~~~[m[K
+      |             [32m[Kserial_port[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:162:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kclose[m[K’ was not declared in this scope; did you mean ‘[01m[Kpclose[m[K’?
+  162 |             [01;31m[Kclose[m[K(can_socket);
+      |             [01;31m[K^~~~~[m[K
+      |             [32m[Kpclose[m[K
+In file included from [01m[K/home/ws/src/tf03_driver/src/TF03.cpp:1[m[K:
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:[m[K In member function ‘[01m[Kvoid TF03::process_sensor_data()[m[K’:
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:176:32:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf03_serial_port[m[K’ was not declared in this scope; did you mean ‘[01m[Kserial_port[m[K’?
+  176 |             ReadByteFromSerial([01;31m[Ktf03_serial_port[m[K, read_byte, timeout_ms);
+      |                                [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/include/TF03.h:25:52:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KReadByteFromSerial[m[K’
+   25 | #define ReadByteFromSerial(port, buffer, timeout) ([01;36m[Kport[m[K->ReadByte(buffer, timeout))
+      |                                                    [01;36m[K^~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:178:34:[m[K [01;35m[Kwarning: [m[Kcatching polymorphic type ‘[01m[Kclass LibSerial::NotOpen[m[K’ by value [[01;35m[K-Wcatch-value=[m[K]
+  178 |         catch (SerialPortNotOpen [01;35m[Ke[m[K)
+      |                                  [01;35m[K^[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:182:38:[m[K [01;35m[Kwarning: [m[Kcatching polymorphic type ‘[01m[Kclass LibSerial::ReadTimeout[m[K’ by value [[01;35m[K-Wcatch-value=[m[K]
+  182 |         catch (SerialPortReadTimeout [01;35m[Ke[m[K)
+      |                                      [01;35m[K^[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:217:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kread[m[K’ was not declared in this scope; did you mean ‘[01m[Kfread[m[K’?
+  217 |         int nbytes = [01;31m[Kread[m[K(can_socket, &publish_frame, sizeof(struct can_frame));
+      |                      [01;31m[K^~~~[m[K
+      |                      [32m[Kfread[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:220:20:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kcanid_t[m[K’ {aka ‘[01m[Kunsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  220 |             if ([01;35m[Kid == publish_frame.can_id[m[K)
+      |                 [01;35m[K~~~^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:217:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Knbytes[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  217 |         int [01;35m[Knbytes[m[K = read(can_socket, &publish_frame, sizeof(struct can_frame));
+      |             [01;35m[K^~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:[m[K In member function ‘[01m[Kvoid TF03::process_incoming_buffer(std::vector<unsigned char, std::allocator<unsigned char> >, int)[m[K’:
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:292:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kstrength[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  292 |         u_int [01;35m[Kstrength[m[K = strength_high_byte * 256 + strength_low_byte;
+      |               [01;35m[K^~~~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:[m[K In member function ‘[01m[Kint TF03::init_sensor(tf_03_interface, std::string)[m[K’:
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:414:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf03_serial_port[m[K’ was not declared in this scope; did you mean ‘[01m[Kserial_port[m[K’?
+  414 |         [01;31m[Ktf03_serial_port[m[K = new SerialPort(device_name);
+      |         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+      |         [32m[Kserial_port[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:414:32:[m[K [01;31m[Kerror: [m[Kexpected type-specifier before ‘[01m[KSerialPort[m[K’
+  414 |         tf03_serial_port = new [01;31m[KSerialPort[m[K(device_name);
+      |                                [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:421:21:[m[K [01;31m[Kerror: [m[K‘[01m[KSerialPort[m[K’ has not been declared
+  421 |                     [01;31m[KSerialPort[m[K::BaudRate::BAUD_115200,
+      |                     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:422:21:[m[K [01;31m[Kerror: [m[K‘[01m[KSerialPort[m[K’ has not been declared
+  422 |                     [01;31m[KSerialPort[m[K::CharacterSize::CHAR_SIZE_8,
+      |                     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:423:21:[m[K [01;31m[Kerror: [m[K‘[01m[KSerialPort[m[K’ has not been declared
+  423 |                     [01;31m[KSerialPort[m[K::Parity::PARITY_NONE,
+      |                     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:424:21:[m[K [01;31m[Kerror: [m[K‘[01m[KSerialPort[m[K’ has not been declared
+  424 |                     [01;31m[KSerialPort[m[K::StopBits::STOP_BITS_1,
+      |                     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:425:21:[m[K [01;31m[Kerror: [m[K‘[01m[KSerialPort[m[K’ has not been declared
+  425 |                     [01;31m[KSerialPort[m[K::FlowControl::FLOW_CONTROL_NONE);
+      |                     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:427:20:[m[K [01;31m[Kerror: [m[K‘[01m[KSerialPort[m[K’ does not name a type
+  427 |             catch ([01;31m[KSerialPort[m[K::OpenFailed)
+      |                    [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:427:42:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K)[m[K’ token
+  427 |             catch (SerialPort::OpenFailed[01;31m[K)[m[K
+      |                                          [01;31m[K^[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:[m[K In member function ‘[01m[Kvoid TF03::write_command_data(tf_03_interface, std::vector<unsigned char, std::allocator<unsigned char> >)[m[K’:
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:578:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf03_serial_port[m[K’ was not declared in this scope; did you mean ‘[01m[Kserial_port[m[K’?
+  578 |         [01;31m[Ktf03_serial_port[m[K->Write(data);
+      |         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+      |         [32m[Kserial_port[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:582:31:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<unsigned char, std::allocator<unsigned char> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  582 |         for (int cnt = 0; [01;35m[Kcnt < data.size()[m[K; cnt++)
+      |                           [01;35m[K~~~~^~~~~~~~~~~~~[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:586:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kwrite[m[K’ was not declared in this scope; did you mean ‘[01m[Kfwrite[m[K’?
+  586 |         int nbytes = [01;31m[Kwrite[m[K(can_socket, frame, sizeof(struct can_frame));
+      |                      [01;31m[K^~~~~[m[K
+      |                      [32m[Kfwrite[m[K
+[01m[K/home/ws/src/tf03_driver/src/TF03.cpp:586:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Knbytes[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  586 |         int [01;35m[Knbytes[m[K = write(can_socket, frame, sizeof(struct can_frame));
+      |             [01;35m[K^~~~~~[m[K
+make[2]: *** [CMakeFiles/tf03_node.dir/build.make:63: CMakeFiles/tf03_node.dir/src/tf03_node.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[2]: *** [CMakeFiles/tf03_node.dir/build.make:76: CMakeFiles/tf03_node.dir/src/TF03.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/tf03_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

@@ -1,0 +1,4 @@
+Invoking command in '/home/ws/build/tf03_driver': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/ws/src/tf03_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ws/install/tf03_driver
+Invoked command in '/home/ws/build/tf03_driver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/ws/src/tf03_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ws/install/tf03_driver
+Invoking command in '/home/ws/build/tf03_driver': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/ws/build/tf03_driver -- -j8 -l8
+Invoked command in '/home/ws/build/tf03_driver' returned '2': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/ws/build/tf03_driver -- -j8 -l8

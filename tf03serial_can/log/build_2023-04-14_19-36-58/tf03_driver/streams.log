@@ -1,0 +1,60 @@
+[0.035s] Invoking command in '/home/ws/build/tf03_driver': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/ws/src/tf03_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ws/install/tf03_driver
+[0.177s] -- The C compiler identification is GNU 9.4.0
+[0.299s] -- The CXX compiler identification is GNU 9.4.0
+[0.308s] -- Check for working C compiler: /usr/bin/cc
+[0.460s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.461s] -- Detecting C compiler ABI info
+[0.635s] -- Detecting C compiler ABI info - done
+[0.663s] -- Detecting C compile features
+[0.664s] -- Detecting C compile features - done
+[0.669s] -- Check for working CXX compiler: /usr/bin/c++
+[0.859s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.861s] -- Detecting CXX compiler ABI info
+[1.047s] -- Detecting CXX compiler ABI info - done
+[1.080s] -- Detecting CXX compile features
+[1.082s] -- Detecting CXX compile features - done
+[1.100s] -- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)
+[1.168s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[1.168s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.543s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.638s] -- Found rclcpp: 2.4.2 (/opt/ros/foxy/share/rclcpp/cmake)
+[1.772s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.803s] -- Found rosidl_adapter: 1.3.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[2.015s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[2.092s] -- Found FastRTPS: /opt/ros/foxy/include  
+[2.335s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.507s] -- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[2.510s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.518s] -- Looking for pthread.h
+[2.687s] -- Looking for pthread.h - found
+[2.689s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.858s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[2.859s] -- Looking for pthread_create in pthreads
+[2.986s] -- Looking for pthread_create in pthreads - not found
+[2.987s] -- Looking for pthread_create in pthread
+[3.148s] -- Looking for pthread_create in pthread - found
+[3.151s] -- Found Threads: TRUE  
+[3.713s] -- Configuring done
+[3.731s] -- Generating done
+[3.733s] -- Build files have been written to: /home/ws/build/tf03_driver
+[3.749s] Invoked command in '/home/ws/build/tf03_driver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake /home/ws/src/tf03_driver -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ws/install/tf03_driver
+[3.757s] Invoking command in '/home/ws/build/tf03_driver': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/ws/build/tf03_driver -- -j8 -l8
+[3.849s] [35m[1mScanning dependencies of target tf03_node[0m
+[3.953s] [ 33%] [32mBuilding CXX object CMakeFiles/tf03_node.dir/src/tf03_node.cpp.o[0m
+[3.957s] [ 66%] [32mBuilding CXX object CMakeFiles/tf03_node.dir/src/TF03.cpp.o[0m
+[4.257s] In file included from [01m[K/home/ws/src/tf03_driver/src/tf03_node.cpp:2[m[K:
+[4.257s] [01m[K/home/ws/src/tf03_driver/include/TF03.h:15:10:[m[K [01;31m[Kfatal error: [m[KSerialPort.h: No such file or directory
+[4.257s]    15 | #include [01;31m[K<SerialPort.h>[m[K
+[4.258s]       |          [01;31m[K^~~~~~~~~~~~~~[m[K
+[4.258s] In file included from [01m[K/home/ws/src/tf03_driver/src/TF03.cpp:1[m[K:
+[4.258s] [01m[K/home/ws/src/tf03_driver/include/TF03.h:15:10:[m[K [01;31m[Kfatal error: [m[KSerialPort.h: No such file or directory
+[4.259s]    15 | #include [01;31m[K<SerialPort.h>[m[K
+[4.259s]       |          [01;31m[K^~~~~~~~~~~~~~[m[K
+[4.259s] compilation terminated.
+[4.260s] compilation terminated.
+[4.262s] make[2]: *** [CMakeFiles/tf03_node.dir/build.make:63: CMakeFiles/tf03_node.dir/src/tf03_node.cpp.o] Error 1
+[4.262s] make[2]: *** Waiting for unfinished jobs....
+[4.262s] make[2]: *** [CMakeFiles/tf03_node.dir/build.make:76: CMakeFiles/tf03_node.dir/src/TF03.cpp.o] Error 1
+[4.263s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/tf03_node.dir/all] Error 2
+[4.263s] make: *** [Makefile:141: all] Error 2
+[4.267s] Invoked command in '/home/ws/build/tf03_driver' returned '2': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/ws/build/tf03_driver -- -j8 -l8

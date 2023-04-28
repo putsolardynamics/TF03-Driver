@@ -1,0 +1,258 @@
+[0.000000] (-) TimerEvent: {}
+[0.001303] (tf03_driver) JobQueued: {'identifier': 'tf03_driver', 'dependencies': OrderedDict()}
+[0.001377] (tf03_driver) JobStarted: {'identifier': 'tf03_driver'}
+[0.033093] (tf03_driver) JobProgress: {'identifier': 'tf03_driver', 'progress': 'cmake'}
+[0.034797] (tf03_driver) JobProgress: {'identifier': 'tf03_driver', 'progress': 'build'}
+[0.036613] (tf03_driver) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ws/build/tf03_driver', '--', '-j8', '-l8'], 'cwd': '/home/ws/build/tf03_driver', 'env': OrderedDict([('HOSTNAME', 'orkisz-Latitude-5480'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/b7886d7461186a5eac768481578c1d7ca80e2d21/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/b7886d7461186a5eac768481578c1d7ca80e2d21/bin/helpers/browser.sh'), ('HOME', '/home/orkisz'), ('TERM_PROGRAM_VERSION', '1.77.1'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-3995fb5b-88c3-4ab4-8f92-0d3aceeb008c.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/b7886d7461186a5eac768481578c1d7ca80e2d21/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/b7886d7461186a5eac768481578c1d7ca80e2d21/node'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('ROS_DISTRO', 'foxy'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-acdaf92d-b0b8-4b78-b6c9-b9ed045882bb.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/opt/ros/foxy/bin:/vscode/vscode-server/bin/linux-x64/b7886d7461186a5eac768481578c1d7ca80e2d21/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-acdaf92d-b0b8-4b78-b6c9-b9ed045882bb.sock","/tmp/.X11-unix/X4","/home/orkisz/.gnupg/S.gpg-agent"]'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-e1b16822d0.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-acdaf92d-b0b8-4b78-b6c9-b9ed045882bb.sock'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('REMOTE_CONTAINERS_DISPLAY_SOCK', '/tmp/.X11-unix/X4'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/ws/build/tf03_driver'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy')]), 'shell': False}
+[0.099386] (-) TimerEvent: {}
+[0.101521] (tf03_driver) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[0.171046] (tf03_driver) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.199486] (-) TimerEvent: {}
+[0.299963] (-) TimerEvent: {}
+[0.400401] (-) TimerEvent: {}
+[0.500833] (-) TimerEvent: {}
+[0.559337] (tf03_driver) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.579542] (tf03_driver) StdoutLine: {'line': b'-- Found rclcpp: 2.4.2 (/opt/ros/foxy/share/rclcpp/cmake)\n'}
+[0.600953] (-) TimerEvent: {}
+[0.665883] (tf03_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.675145] (tf03_driver) StdoutLine: {'line': b'-- Found rosidl_adapter: 1.3.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)\n'}
+[0.701214] (-) TimerEvent: {}
+[0.801885] (-) TimerEvent: {}
+[0.902297] (-) TimerEvent: {}
+[1.002762] (-) TimerEvent: {}
+[1.023035] (tf03_driver) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.102869] (-) TimerEvent: {}
+[1.142674] (tf03_driver) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)\n'}
+[1.147330] (tf03_driver) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.203023] (-) TimerEvent: {}
+[1.303514] (-) TimerEvent: {}
+[1.403895] (-) TimerEvent: {}
+[1.504656] (-) TimerEvent: {}
+[1.605108] (-) TimerEvent: {}
+[1.694796] (tf03_driver) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.705288] (-) TimerEvent: {}
+[1.710974] (tf03_driver) StdoutLine: {'line': b'-- Generating done\n'}
+[1.715267] (tf03_driver) StdoutLine: {'line': b'-- Build files have been written to: /home/ws/build/tf03_driver\n'}
+[1.779401] (tf03_driver) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target tf03_node\x1b[0m\n'}
+[1.805397] (-) TimerEvent: {}
+[1.862856] (tf03_driver) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/tf03_node.dir/src/tf03_node.cpp.o\x1b[0m\n'}
+[1.864768] (tf03_driver) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/tf03_node.dir/src/TF03.cpp.o\x1b[0m\n'}
+[1.905524] (-) TimerEvent: {}
+[2.005963] (-) TimerEvent: {}
+[2.106434] (-) TimerEvent: {}
+[2.206892] (-) TimerEvent: {}
+[2.307325] (-) TimerEvent: {}
+[2.407742] (-) TimerEvent: {}
+[2.508129] (-) TimerEvent: {}
+[2.608550] (-) TimerEvent: {}
+[2.708973] (-) TimerEvent: {}
+[2.809431] (-) TimerEvent: {}
+[2.909904] (-) TimerEvent: {}
+[3.010354] (-) TimerEvent: {}
+[3.110740] (-) TimerEvent: {}
+[3.211163] (-) TimerEvent: {}
+[3.311563] (-) TimerEvent: {}
+[3.411984] (-) TimerEvent: {}
+[3.512376] (-) TimerEvent: {}
+[3.612783] (-) TimerEvent: {}
+[3.713176] (-) TimerEvent: {}
+[3.813550] (-) TimerEvent: {}
+[3.914083] (-) TimerEvent: {}
+[4.014512] (-) TimerEvent: {}
+[4.114993] (-) TimerEvent: {}
+[4.215488] (-) TimerEvent: {}
+[4.316142] (-) TimerEvent: {}
+[4.416593] (-) TimerEvent: {}
+[4.517083] (-) TimerEvent: {}
+[4.617557] (-) TimerEvent: {}
+[4.718018] (-) TimerEvent: {}
+[4.818475] (-) TimerEvent: {}
+[4.918868] (-) TimerEvent: {}
+[4.952219] (tf03_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:1\x1b[m\x1b[K:\n'}
+[4.953104] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/include/TF03.h:63:10:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kuse of \xe2\x80\x98\x1b[01m\x1b[Kauto\x1b[m\x1b[K\xe2\x80\x99 in parameter declaration only available with \xe2\x80\x98\x1b[01m\x1b[K-fconcepts\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.953473] (tf03_driver) StderrLine: {'line': b'   63 |     TF03(\x1b[01;35m\x1b[Kauto\x1b[m\x1b[K node = rclcpp::Node::make_shared("tf03_node"));\n'}
+[4.953852] (tf03_driver) StderrLine: {'line': b'      |          \x1b[01;35m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[4.967842] (tf03_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ws/src/tf03_driver/src/tf03_node.cpp:2\x1b[m\x1b[K:\n'}
+[4.968127] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/include/TF03.h:63:10:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kuse of \xe2\x80\x98\x1b[01m\x1b[Kauto\x1b[m\x1b[K\xe2\x80\x99 in parameter declaration only available with \xe2\x80\x98\x1b[01m\x1b[K-fconcepts\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.968277] (tf03_driver) StderrLine: {'line': b'   63 |     TF03(\x1b[01;35m\x1b[Kauto\x1b[m\x1b[K node = rclcpp::Node::make_shared("tf03_node"));\n'}
+[4.968406] (tf03_driver) StderrLine: {'line': b'      |          \x1b[01;35m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[4.990406] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:4:12:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kuse of \xe2\x80\x98\x1b[01m\x1b[Kauto\x1b[m\x1b[K\xe2\x80\x99 in parameter declaration only available with \xe2\x80\x98\x1b[01m\x1b[K-fconcepts\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.990694] (tf03_driver) StderrLine: {'line': b'    4 | TF03::TF03(\x1b[01;35m\x1b[Kauto\x1b[m\x1b[K node = rclcpp::Node::make_shared())\n'}
+[4.991354] (tf03_driver) StderrLine: {'line': b'      |            \x1b[01;35m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[4.991845] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:4:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kredeclaration of \xe2\x80\x98\x1b[01m\x1b[KTF03::TF03(auto:13)\x1b[m\x1b[K\xe2\x80\x99 may not have default arguments [\x1b[01;31m\x1b[K-fpermissive\x1b[m\x1b[K]\n'}
+[4.992494] (tf03_driver) StderrLine: {'line': b'    4 | \x1b[01;31m\x1b[KTF03\x1b[m\x1b[K::TF03(auto node = rclcpp::Node::make_shared())\n'}
+[4.993019] (tf03_driver) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[4.993479] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KTF03::TF03(auto:13)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.993713] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:9:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kclass std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99} has no member named \xe2\x80\x98\x1b[01m\x1b[Kparam\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.993931] (tf03_driver) StderrLine: {'line': b'    9 |     node_handle.\x1b[01;31m\x1b[Kparam\x1b[m\x1b[K<std::string>("serial_port", serial_port, "/dev/ttyUSB0");\n'}
+[4.994126] (tf03_driver) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[4.994257] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:9:34:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[4.994385] (tf03_driver) StderrLine: {'line': b'    9 |     node_handle.param<std::string\x1b[01;31m\x1b[K>\x1b[m\x1b[K("serial_port", serial_port, "/dev/ttyUSB0");\n'}
+[4.994511] (tf03_driver) StderrLine: {'line': b'      |                                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.994633] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:10:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kclass std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99} has no member named \xe2\x80\x98\x1b[01m\x1b[Kparam\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.994760] (tf03_driver) StderrLine: {'line': b'   10 |     node_handle.\x1b[01;31m\x1b[Kparam\x1b[m\x1b[K<std::string>("can_device", can_device, "panther_can");\n'}
+[4.994895] (tf03_driver) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[4.995024] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:10:34:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[4.995155] (tf03_driver) StderrLine: {'line': b'   10 |     node_handle.param<std::string\x1b[01;31m\x1b[K>\x1b[m\x1b[K("can_device", can_device, "panther_can");\n'}
+[4.995276] (tf03_driver) StderrLine: {'line': b'      |                                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.995397] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:11:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kclass std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99} has no member named \xe2\x80\x98\x1b[01m\x1b[KgetParam\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.995533] (tf03_driver) StderrLine: {'line': b'   11 |     node_handle.\x1b[01;31m\x1b[KgetParam\x1b[m\x1b[K("can_transmit_id", can_transmit_id);\n'}
+[4.995653] (tf03_driver) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[4.995772] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:12:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kclass std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99} has no member named \xe2\x80\x98\x1b[01m\x1b[KgetParam\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.995895] (tf03_driver) StderrLine: {'line': b'   12 |     node_handle.\x1b[01;31m\x1b[KgetParam\x1b[m\x1b[K("sensor_frame", sensor_frame);\n'}
+[4.996046] (tf03_driver) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[4.996168] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:13:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kclass std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99} has no member named \xe2\x80\x98\x1b[01m\x1b[Kparam\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.996293] (tf03_driver) StderrLine: {'line': b'   13 |     node_handle.\x1b[01;31m\x1b[Kparam\x1b[m\x1b[K<int>("can_receive_id", can_receive_id, 0x3003); //HEX 0x3003 = DEC 12291\n'}
+[4.996428] (tf03_driver) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[4.996551] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:13:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.996673] (tf03_driver) StderrLine: {'line': b'   13 |     node_handle.param<\x1b[01;31m\x1b[Kint\x1b[m\x1b[K>("can_receive_id", can_receive_id, 0x3003); //HEX 0x3003 = DEC 12291\n'}
+[4.996793] (tf03_driver) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.996912] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:14:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kclass std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99} has no member named \xe2\x80\x98\x1b[01m\x1b[Kparam\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.997035] (tf03_driver) StderrLine: {'line': b'   14 |     node_handle.\x1b[01;31m\x1b[Kparam\x1b[m\x1b[K<std::string>("sensor_interface", sensor_interface, "serial");\n'}
+[4.997155] (tf03_driver) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[4.997289] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:14:34:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[4.997524] (tf03_driver) StderrLine: {'line': b'   14 |     node_handle.param<std::string\x1b[01;31m\x1b[K>\x1b[m\x1b[K("sensor_interface", sensor_interface, "serial");\n'}
+[4.997696] (tf03_driver) StderrLine: {'line': b'      |                                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.997823] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:16:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kclass std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99} has no member named \xe2\x80\x98\x1b[01m\x1b[Kparam\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.997952] (tf03_driver) StderrLine: {'line': b'   16 |     node_handle.\x1b[01;31m\x1b[Kparam\x1b[m\x1b[K<bool>("print_version", print_version, false);\n'}
+[4.998074] (tf03_driver) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[4.998195] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:16:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kbool\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.998315] (tf03_driver) StderrLine: {'line': b'   16 |     node_handle.param<\x1b[01;31m\x1b[Kbool\x1b[m\x1b[K>("print_version", print_version, false);\n'}
+[4.998435] (tf03_driver) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[4.998552] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:17:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kclass std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99} has no member named \xe2\x80\x98\x1b[01m\x1b[Kparam\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.998677] (tf03_driver) StderrLine: {'line': b'   17 |     node_handle.\x1b[01;31m\x1b[Kparam\x1b[m\x1b[K<std::string>("set_output_format", set_output_format, "");\n'}
+[4.998797] (tf03_driver) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[4.998916] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:17:34:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[4.999045] (tf03_driver) StderrLine: {'line': b'   17 |     node_handle.param<std::string\x1b[01;31m\x1b[K>\x1b[m\x1b[K("set_output_format", set_output_format, "");\n'}
+[4.999225] (tf03_driver) StderrLine: {'line': b'      |                                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.999408] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:18:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kclass std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99} has no member named \xe2\x80\x98\x1b[01m\x1b[Kparam\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.999544] (tf03_driver) StderrLine: {'line': b'   18 |     node_handle.\x1b[01;31m\x1b[Kparam\x1b[m\x1b[K<int>("set_transmit_can_id", set_transmit_can_id, 0);\n'}
+[4.999673] (tf03_driver) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[4.999795] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:18:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.999942] (tf03_driver) StderrLine: {'line': b'   18 |     node_handle.param<\x1b[01;31m\x1b[Kint\x1b[m\x1b[K>("set_transmit_can_id", set_transmit_can_id, 0);\n'}
+[5.000076] (tf03_driver) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[5.000196] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:19:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing SharedPtr = class std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kclass std::shared_ptr<rclcpp::Node>\x1b[m\x1b[K\xe2\x80\x99} has no member named \xe2\x80\x98\x1b[01m\x1b[Kparam\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.000330] (tf03_driver) StderrLine: {'line': b'   19 |     node_handle.\x1b[01;31m\x1b[Kparam\x1b[m\x1b[K<int>("set_receive_can_id", set_receive_can_id, 0);\n'}
+[5.000453] (tf03_driver) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[5.000575] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:19:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.000697] (tf03_driver) StderrLine: {'line': b'   19 |     node_handle.param<\x1b[01;31m\x1b[Kint\x1b[m\x1b[K>("set_receive_can_id", set_receive_can_id, 0);\n'}
+[5.000817] (tf03_driver) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[5.000935] (tf03_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/service.hpp:34\x1b[m\x1b[K,\n'}
+[5.001053] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/callback_group.hpp:25\x1b[m\x1b[K,\n'}
+[5.001185] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[5.001303] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24\x1b[m\x1b[K,\n'}
+[5.001424] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[5.001584] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[5.001731] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executor.hpp:33\x1b[m\x1b[K,\n'}
+[5.001855] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26\x1b[m\x1b[K,\n'}
+[5.001977] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[5.002099] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146\x1b[m\x1b[K,\n'}
+[5.002219] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ws/src/tf03_driver/include/TF03.h:11\x1b[m\x1b[K,\n'}
+[5.002338] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:1\x1b[m\x1b[K:\n'}
+[5.002455] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:24:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kthere are no arguments to \xe2\x80\x98\x1b[01m\x1b[Kget_logger\x1b[m\x1b[K\xe2\x80\x99 that depend on a template parameter, so a declaration of \xe2\x80\x98\x1b[01m\x1b[Kget_logger\x1b[m\x1b[K\xe2\x80\x99 must be available [\x1b[01;31m\x1b[K-fpermissive\x1b[m\x1b[K]\n'}
+[5.002583] (tf03_driver) StderrLine: {'line': b'   24 |         RCLCPP_INFO(\x1b[01;31m\x1b[Kget_logger\x1b[m\x1b[K(),"Print tf_03 version");\n'}
+[5.002705] (tf03_driver) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.002828] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:24:21:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K(if you use \xe2\x80\x98\x1b[01m\x1b[K-fpermissive\x1b[m\x1b[K\xe2\x80\x99, G++ will accept your code, but allowing the use of an undeclared name is deprecated)\n'}
+[5.002950] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:24:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kthere are no arguments to \xe2\x80\x98\x1b[01m\x1b[Kget_logger\x1b[m\x1b[K\xe2\x80\x99 that depend on a template parameter, so a declaration of \xe2\x80\x98\x1b[01m\x1b[Kget_logger\x1b[m\x1b[K\xe2\x80\x99 must be available [\x1b[01;31m\x1b[K-fpermissive\x1b[m\x1b[K]\n'}
+[5.003090] (tf03_driver) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[5.003212] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/callback_group.hpp:23\x1b[m\x1b[K,\n'}
+[5.003340] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[5.003461] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24\x1b[m\x1b[K,\n'}
+[5.003578] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[5.003697] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[5.003815] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executor.hpp:33\x1b[m\x1b[K,\n'}
+[5.003955] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26\x1b[m\x1b[K,\n'}
+[5.004107] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[5.004259] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146\x1b[m\x1b[K,\n'}
+[5.004382] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ws/src/tf03_driver/include/TF03.h:11\x1b[m\x1b[K,\n'}
+[5.004503] (tf03_driver) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:1\x1b[m\x1b[K:\n'}
+[5.004624] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:24:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kthere are no arguments to \xe2\x80\x98\x1b[01m\x1b[Kget_logger\x1b[m\x1b[K\xe2\x80\x99 that depend on a template parameter, so a declaration of \xe2\x80\x98\x1b[01m\x1b[Kget_logger\x1b[m\x1b[K\xe2\x80\x99 must be available [\x1b[01;31m\x1b[K-fpermissive\x1b[m\x1b[K]\n'}
+[5.004761] (tf03_driver) StderrLine: {'line': b'   24 |         RCLCPP_INFO(\x1b[01;31m\x1b[Kget_logger\x1b[m\x1b[K(),"Print tf_03 version");\n'}
+[5.004883] (tf03_driver) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.005005] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:24:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kthere are no arguments to \xe2\x80\x98\x1b[01m\x1b[Kget_logger\x1b[m\x1b[K\xe2\x80\x99 that depend on a template parameter, so a declaration of \xe2\x80\x98\x1b[01m\x1b[Kget_logger\x1b[m\x1b[K\xe2\x80\x99 must be available [\x1b[01;31m\x1b[K-fpermissive\x1b[m\x1b[K]\n'}
+[5.005140] (tf03_driver) StderrLine: {'line': b'   24 |         RCLCPP_INFO(\x1b[01;31m\x1b[Kget_logger\x1b[m\x1b[K(),"Print tf_03 version");\n'}
+[5.005297] (tf03_driver) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.016070] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:111:51:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Know\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Time\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.016501] (tf03_driver) StderrLine: {'line': b'  111 |                 command_timestamp = rclcpp::Time::\x1b[01;31m\x1b[Know\x1b[m\x1b[K();\n'}
+[5.016745] (tf03_driver) StderrLine: {'line': b'      |                                                   \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[5.017033] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:114:42:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kros\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[5.017320] (tf03_driver) StderrLine: {'line': b'  114 |             else if (command_timestamp + \x1b[01;31m\x1b[Kros\x1b[m\x1b[K::Duration(2) < rclcpp::Time::now())\n'}
+[5.017531] (tf03_driver) StderrLine: {'line': b'      |                                          \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[5.017790] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:114:75:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Know\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Time\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.018003] (tf03_driver) StderrLine: {'line': b'  114 |             else if (command_timestamp + ros::Duration(2) < rclcpp::Time::\x1b[01;31m\x1b[Know\x1b[m\x1b[K())\n'}
+[5.018211] (tf03_driver) StderrLine: {'line': b'      |                                                                           \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[5.018956] (-) TimerEvent: {}
+[5.019522] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:133:45:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kauto\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.019878] (tf03_driver) StderrLine: {'line': b'  133 |             sensor_pub.insert(std::pair<int,\x1b[01;31m\x1b[Kauto\x1b[m\x1b[K>(s.first, node_handle->create_publisher<sensor_msgs::msg::Range>("sensor/" + sensor.second, 1)));\n'}
+[5.020138] (tf03_driver) StderrLine: {'line': b'      |                                             \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[5.020368] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:133:49:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 2 is invalid\n'}
+[5.020577] (tf03_driver) StderrLine: {'line': b'  133 |             sensor_pub.insert(std::pair<int,auto\x1b[01;31m\x1b[K>\x1b[m\x1b[K(s.first, node_handle->create_publisher<sensor_msgs::msg::Range>("sensor/" + sensor.second, 1)));\n'}
+[5.020783] (tf03_driver) StderrLine: {'line': b'      |                                                 \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.022366] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:133:51:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ks\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[5.022703] (tf03_driver) StderrLine: {'line': b'  133 |             sensor_pub.insert(std::pair<int,auto>(\x1b[01;31m\x1b[Ks\x1b[m\x1b[K.first, node_handle->create_publisher<sensor_msgs::msg::Range>("sensor/" + sensor.second, 1)));\n'}
+[5.022927] (tf03_driver) StderrLine: {'line': b'      |                                                   \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.039916] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:\x1b[m\x1b[K In destructor \xe2\x80\x98\x1b[01m\x1b[KTF03::~TF03()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.040302] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:162:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclose\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kpclose\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.040527] (tf03_driver) StderrLine: {'line': b'  162 |             \x1b[01;31m\x1b[Kclose\x1b[m\x1b[K(can_socket);\n'}
+[5.040741] (tf03_driver) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[5.041091] (tf03_driver) StderrLine: {'line': b'      |             \x1b[32m\x1b[Kpclose\x1b[m\x1b[K\n'}
+[5.041317] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid TF03::process_sensor_data()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.041519] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:178:34:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcatching polymorphic type \xe2\x80\x98\x1b[01m\x1b[Kclass LibSerial::NotOpen\x1b[m\x1b[K\xe2\x80\x99 by value [\x1b[01;35m\x1b[K-Wcatch-value=\x1b[m\x1b[K]\n'}
+[5.041745] (tf03_driver) StderrLine: {'line': b'  178 |         catch (SerialPortNotOpen \x1b[01;35m\x1b[Ke\x1b[m\x1b[K)\n'}
+[5.041942] (tf03_driver) StderrLine: {'line': b'      |                                  \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[5.042414] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:182:38:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcatching polymorphic type \xe2\x80\x98\x1b[01m\x1b[Kclass LibSerial::ReadTimeout\x1b[m\x1b[K\xe2\x80\x99 by value [\x1b[01;35m\x1b[K-Wcatch-value=\x1b[m\x1b[K]\n'}
+[5.042645] (tf03_driver) StderrLine: {'line': b'  182 |         catch (SerialPortReadTimeout \x1b[01;35m\x1b[Ke\x1b[m\x1b[K)\n'}
+[5.042851] (tf03_driver) StderrLine: {'line': b'      |                                      \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[5.049622] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:217:22:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kread\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kfread\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.052147] (tf03_driver) StderrLine: {'line': b'  217 |         int nbytes = \x1b[01;31m\x1b[Kread\x1b[m\x1b[K(can_socket, &publish_frame, sizeof(struct can_frame));\n'}
+[5.053332] (tf03_driver) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[5.053825] (tf03_driver) StderrLine: {'line': b'      |                      \x1b[32m\x1b[Kfread\x1b[m\x1b[K\n'}
+[5.054353] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:220:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kcanid_t\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kunsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K-Wsign-compare\x1b[m\x1b[K]\n'}
+[5.054633] (tf03_driver) StderrLine: {'line': b'  220 |             if (\x1b[01;35m\x1b[Kid == publish_frame.can_id\x1b[m\x1b[K)\n'}
+[5.054888] (tf03_driver) StderrLine: {'line': b'      |                 \x1b[01;35m\x1b[K~~~^~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.055133] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:217:13:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Knbytes\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-variable\x1b[m\x1b[K]\n'}
+[5.055381] (tf03_driver) StderrLine: {'line': b'  217 |         int \x1b[01;35m\x1b[Knbytes\x1b[m\x1b[K = read(can_socket, &publish_frame, sizeof(struct can_frame));\n'}
+[5.055636] (tf03_driver) StderrLine: {'line': b'      |             \x1b[01;35m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[5.079045] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid TF03::process_incoming_buffer(std::vector<unsigned char, std::allocator<unsigned char> >, int)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.079524] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:292:15:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kstrength\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-variable\x1b[m\x1b[K]\n'}
+[5.079793] (tf03_driver) StderrLine: {'line': b'  292 |         u_int \x1b[01;35m\x1b[Kstrength\x1b[m\x1b[K = strength_high_byte * 256 + strength_low_byte;\n'}
+[5.080083] (tf03_driver) StderrLine: {'line': b'      |               \x1b[01;35m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[5.093124] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kint TF03::init_sensor(tf_03_interface, std::string)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.093534] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:449:31:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcatching polymorphic type \xe2\x80\x98\x1b[01m\x1b[Kclass LibSerial::OpenFailed\x1b[m\x1b[K\xe2\x80\x99 by value [\x1b[01;35m\x1b[K-Wcatch-value=\x1b[m\x1b[K]\n'}
+[5.093800] (tf03_driver) StderrLine: {'line': b'  449 |             catch (LibSerial::\x1b[01;35m\x1b[KOpenFailed\x1b[m\x1b[K)\n'}
+[5.094050] (tf03_driver) StderrLine: {'line': b'      |                               \x1b[01;35m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.112870] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid TF03::write_command_data(tf_03_interface, std::vector<unsigned char, std::allocator<unsigned char> >)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.113219] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:582:31:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kcomparison of integer expressions of different signedness: \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 and \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<unsigned char, std::allocator<unsigned char> >::size_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Klong unsigned int\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K-Wsign-compare\x1b[m\x1b[K]\n'}
+[5.113457] (tf03_driver) StderrLine: {'line': b'  582 |         for (int cnt = 0; \x1b[01;35m\x1b[Kcnt < data.size()\x1b[m\x1b[K; cnt++)\n'}
+[5.113659] (tf03_driver) StderrLine: {'line': b'      |                           \x1b[01;35m\x1b[K~~~~^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.115329] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:586:22:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kwrite\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kfwrite\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.115635] (tf03_driver) StderrLine: {'line': b'  586 |         int nbytes = \x1b[01;31m\x1b[Kwrite\x1b[m\x1b[K(can_socket, frame, sizeof(struct can_frame));\n'}
+[5.115886] (tf03_driver) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[5.116162] (tf03_driver) StderrLine: {'line': b'      |                      \x1b[32m\x1b[Kfwrite\x1b[m\x1b[K\n'}
+[5.116409] (tf03_driver) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ws/src/tf03_driver/src/TF03.cpp:586:13:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Knbytes\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-variable\x1b[m\x1b[K]\n'}
+[5.116650] (tf03_driver) StderrLine: {'line': b'  586 |         int \x1b[01;35m\x1b[Knbytes\x1b[m\x1b[K = write(can_socket, frame, sizeof(struct can_frame));\n'}
+[5.116887] (tf03_driver) StderrLine: {'line': b'      |             \x1b[01;35m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[5.119061] (-) TimerEvent: {}
+[5.219462] (-) TimerEvent: {}
+[5.319948] (-) TimerEvent: {}
+[5.420438] (-) TimerEvent: {}
+[5.520906] (-) TimerEvent: {}
+[5.621382] (-) TimerEvent: {}
+[5.721853] (-) TimerEvent: {}
+[5.822296] (-) TimerEvent: {}
+[5.922693] (-) TimerEvent: {}
+[6.023086] (-) TimerEvent: {}
+[6.123475] (-) TimerEvent: {}
+[6.224008] (-) TimerEvent: {}
+[6.324483] (-) TimerEvent: {}
+[6.424926] (-) TimerEvent: {}
+[6.525370] (-) TimerEvent: {}
+[6.625812] (-) TimerEvent: {}
+[6.726264] (-) TimerEvent: {}
+[6.790022] (tf03_driver) StderrLine: {'line': b'make[2]: *** [CMakeFiles/tf03_node.dir/build.make:76: CMakeFiles/tf03_node.dir/src/TF03.cpp.o] Error 1\n'}
+[6.790485] (tf03_driver) StderrLine: {'line': b'make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/tf03_node.dir/all] Error 2\n'}
+[6.790804] (tf03_driver) StderrLine: {'line': b'make: *** [Makefile:141: all] Error 2\n'}
+[6.794603] (tf03_driver) CommandEnded: {'returncode': 2}
+[6.826396] (-) TimerEvent: {}
+[6.888310] (tf03_driver) JobEnded: {'identifier': 'tf03_driver', 'rc': 2}
+[6.899514] (-) EventReactorShutdown: {}
