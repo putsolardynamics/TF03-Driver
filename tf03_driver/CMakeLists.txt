@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
 project(tf03_driver)
 
-#add_compile_options(-std=c++11)
 if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 14)
 endif()
@@ -10,29 +9,11 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 find_package(ament_cmake REQUIRED)
-#ament_package( )
 find_package(rclcpp REQUIRED)
-
-#find_package(PkgConfig)
-#pkg_check_modules(SERIAL libserial)
-#find_package(rosidl_default_generators REQUIRED)
-#find_package(libserial REQUIRED)
-
-# if(SERIAL_VERSION VERSION_LESS 1.0.0)
-#   add_definitions(-DLIBSERIAL_0_X)
-# endif()
-
-
-#find_package(catkin REQUIRED COMPONENTS
- #   roscpp
-#)
-
-#find_package(catkin REQUIRED)
-#catkin_package( )
+find_package(sensor_msgs REQUIRED)
 
 include_directories(
   include
-  #${catkin_INCLUDE_DIRS}
   ${Boost_INCLUDE_DIRS}
   ${SERIAL_INCLUDE_DIRS}
 )
@@ -45,6 +26,7 @@ add_executable(tf03_node src/tf03_node.cpp src/TF03.cpp)
 #)
 ament_target_dependencies(tf03_node 
 rclcpp
+sensor_msgs
 #libserial
 )
 target_link_libraries(tf03_node ${SERIAL_LDFLAGS})

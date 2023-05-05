@@ -3,24 +3,24 @@
 #include <net/if.h>
 #include <stdio.h>
 #include <unistd.h>
-TF03::TF03() : Node("tf03driver")
+
+TF03::TF03(rclcpp::Node* node)
 {
-    
-    //node_handle = node;
+    ros_node = node;
     timeout_ms = 1000;
     // this->declare_parameter("serial port", std::vector<std::string>{serial_port,"/dev/ttyUSB0"});
-    this->declare_parameter("serial port", serial_port = "/dev/ttyUSB0");
-    this->declare_parameter("can_device", std::vector<std::string>{can_device,"panther_can"});
-    this->get_parameter("can_transmit_id",can_transmit_id);
-    this->get_parameter("sensor frame",sensor_frame);
+    node->declare_parameter("serial port", serial_port = "/dev/ttyUSB0");
+    node->declare_parameter("can_device", std::vector<std::string>{can_device,"panther_can"});
+    node->get_parameter("can_transmit_id",can_transmit_id);
+    node->get_parameter("sensor frame",sensor_frame);
     // this->declare_parameter("can_receive_id",std::vector<int>{can_receive_id,0x3003});
-    this->declare_parameter("can_receive_id",can_receive_id = 0x3003);
-    this->declare_parameter("sensor_interface", std::vector<std::string>{sensor_interface,"serial"});
+    node->declare_parameter("can_receive_id",can_receive_id = 0x3003);
+    node->declare_parameter("sensor_interface", std::vector<std::string>{sensor_interface,"serial"});
     
-    this->declare_parameter("print_version", std::vector<bool>{print_version,false});
-    this->declare_parameter("set_output_format", std::vector<std::string>{set_output_format,""});
-    this->declare_parameter("set_transmit_can_id", std::vector<int>{set_transmit_can_id,0});
-    this->declare_parameter("serial port", std::vector<int>{set_receive_can_id,0});
+    node->declare_parameter("print_version", std::vector<bool>{print_version,false});
+    node->declare_parameter("set_output_format", std::vector<std::string>{set_output_format,""});
+    node->declare_parameter("set_transmit_can_id", std::vector<int>{set_transmit_can_id,0});
+    node->declare_parameter("serial port", std::vector<int>{set_receive_can_id,0});
     
     // node_handle.param<std::string>("serial_port", serial_port, "/dev/ttyUSB0");
     // node_handle.param<std::string>("can_device", can_device, "panther_can");
@@ -37,39 +37,39 @@ TF03::TF03() : Node("tf03driver")
 
     if (print_version)
     {
-        RCLCPP_INFO(this->get_logger(),"Print tf_03 version");
+        RCLCPP_INFO(ros_node->get_logger(),"Print tf_03 version");
         reconfigure_sensor = true;
         parameters.push_back(parameter_config{false, false, tf_03_command_id::version, 0});
     }
     if (set_transmit_can_id != 0)
     {
         reconfigure_sensor = true;
-        RCLCPP_INFO(this->get_logger(),"New value for set_transmit_can_id %#4x", set_transmit_can_id);
+        RCLCPP_INFO(ros_node->get_logger(),"New value for set_transmit_can_id %#4x", set_transmit_can_id);
         parameters.push_back(parameter_config{false, false, tf_03_command_id::transmit_can_id, set_transmit_can_id});
     }
     if (set_receive_can_id != 0)
     {
         reconfigure_sensor = true;
-        RCLCPP_INFO(this->get_logger(),"New value for set_receive_can_id %#4x", set_receive_can_id);
+        RCLCPP_INFO(ros_node->get_logger(),"New value for set_receive_can_id %#4x", set_receive_can_id);
         parameters.push_back(parameter_config{false, false, tf_03_command_id::receive_can_id, set_receive_can_id});
     }
     if (set_output_format.compare("") != 0)
     {
         if (set_output_format.compare("serial") == 0)
         {
-            RCLCPP_INFO(this->get_logger(),"New value for set_output_format %s", set_output_format.c_str());
+            RCLCPP_INFO(ros_node->get_logger(),"New value for set_output_format %s", set_output_format.c_str());
             reconfigure_sensor = true;
             parameters.push_back(parameter_config{false, false, tf_03_command_id::output_format, SET_OUTPUT_FORMAT_SERIAL});
         }
         else if (set_output_format.compare("can") == 0)
         {
-            RCLCPP_INFO(this->get_logger(),"New value for set_output_format %s", set_output_format.c_str(), SET_OUTPUT_FORMAT_CAN);
+            RCLCPP_INFO(ros_node->get_logger(),"New value for set_output_format %s", set_output_format.c_str(), SET_OUTPUT_FORMAT_CAN);
             reconfigure_sensor = true;
             parameters.push_back(parameter_config{false, false, tf_03_command_id::output_format, SET_OUTPUT_FORMAT_CAN});
         }
         else
         {
-            RCLCPP_ERROR(this->get_logger(),"Invalid value for parameter set_output_format. Valid are serial, can.");
+            RCLCPP_ERROR(ros_node->get_logger(),"Invalid value for parameter set_output_format. Valid are serial, can.");
         }
     }
     if (sensor_interface.compare("serial") == 0)
@@ -79,37 +79,29 @@ TF03::TF03() : Node("tf03driver")
     else if (sensor_interface.compare("can") == 0)
     {
         interface = tf_03_interface::can;
-        RCLCPP_INFO(this->get_logger(),"Will use CAN interface '%s' with device ID %#04x", can_device.c_str(), can_receive_id);
+        RCLCPP_INFO(ros_node->get_logger(),"Will use CAN interface '%s' with device ID %#04x", can_device.c_str(), can_receive_id);
     }
     else
     {
-        RCLCPP_ERROR(this->get_logger(),"Valid interfaces are: serial, can");
+        RCLCPP_ERROR(ros_node->get_logger(),"Valid interfaces are: serial, can");
         return;
     }
 
-    if (sensor_frame.size() == can_transmit_id.size() && can_transmit_id.size() > 0)
+    
+    if (can_transmit_id > 0)
     {
-        for (int i = 0; i < sensor_frame.size(); i++)
-        {
-            sensors.insert(std::pair<int, std::string>(can_transmit_id[i], sensor_frame[i]));
-        }
+        sensors.insert(std::pair<int, std::string>(can_transmit_id, "sensor_at_CAN_ID_" + std::to_string(can_transmit_id)));
     }
-    else if (can_transmit_id.size() > 0)
-    {
-        for (auto id : can_transmit_id)
-        {
-            sensors.insert(std::pair<int, std::string>(id, "sensor_at_CAN_ID_" + std::to_string(id)));
-        }
-    }
+
     else
     {
         sensors.insert(std::pair<int, std::string>(0, "tf03_sensor"));
     }
 
-    RCLCPP_INFO(this->get_logger(),"Initialize sensor");
+    RCLCPP_INFO(ros_node->get_logger(),"Initialize sensor");
     if (init_sensor(interface, (interface == tf_03_interface::serial) ? serial_port : can_device) != 0)
     {
-        RCLCPP_ERROR(this->get_logger(),"Can not init sensor!");
+        RCLCPP_ERROR(ros_node->get_logger(),"Can not init sensor!");
         return;
     }
 
@@ -117,7 +109,7 @@ TF03::TF03() : Node("tf03driver")
     {
         parameters.push_back(parameter_config{false, false, tf_03_command_id::save_settings, 0});
 
-        RCLCPP_INFO(this->get_logger(),"Reconfiguring sensor");
+        RCLCPP_INFO(ros_node->get_logger(),"Reconfiguring sensor");
         while (parameters.size() > 0)
         {
             if (parameters[0].frame_sent == false)
@@ -125,18 +117,19 @@ TF03::TF03() : Node("tf03driver")
                 send_command(interface, parameters[0].command, parameters[0].argument);
                 //command_timestamp = ros::Time::now();
                 
-                command_timestamp = rclcpp::Node::now();
+                command_timestamp = ros_node->get_clock().get()->now();
                 parameters[0].frame_sent = true;
             }
-            else if (command_timestamp + rclcpp::Duration(2) < rclcpp::Node::now())
+            // else if (command_timestamp + rclcpp::Duration(2) < rclcpp::ros_node::now())
+            else if (command_timestamp + rclcpp::Duration(2, 0) < ros_node->get_clock().get()->now())
             {
-                RCLCPP_ERROR(this->get_logger(),"Timeout for command %#2x passed", parameters[0].command);
-                RCLCPP_ERROR(this->get_logger(),"Configuation failed");
+                RCLCPP_ERROR(ros_node->get_logger(),"Timeout for command %#2x passed", parameters[0].command);
+                RCLCPP_ERROR(ros_node->get_logger(),"Configuation failed");
                 return;
             }
             else if (parameters[0].command_success)
             {
-                RCLCPP_INFO(this->get_logger(),"Command success");
+                RCLCPP_INFO(ros_node->get_logger(),"Command success");
                 parameters.erase(parameters.begin());
             }
             process_sensor_data();
@@ -147,22 +140,22 @@ TF03::TF03() : Node("tf03driver")
         for (auto s : sensors)
         {
             // <geometry_msgs::msg::Twist>("turtle1/cmd_vel", 10);
-            //sensor_pub.insert(std::pair<int, auto>(s.first, node_handle.advertise<sensor_msgs::Range>("sensor/" + s.second, 1)));
-            pubb = this->create_publisher<sensor_msgs::msg::Range>("sensor/",10);
-             sensor_pub.insert(std::pair<int,rclcpp::Publisher<sensor_msgs::msg::Range>::SharedPtr>({s.first},pubb));
+            //sensor_pub.insert(std::pair<int, auto>(s.first, ros_node_handle.advertise<sensor_msgs::Range>("sensor/" + s.second, 1)));
+            pubb = ros_node->create_publisher<sensor_msgs::msg::Range>("sensor/",10);
+            // sensor_pub.insert(std::pair<int,rclcpp::Publisher<sensor_msgs::msg::Range>::SharedPtr>({s.first},pubb));
             //sensor_pub.insert(std::pair<int,rclcpp::Publisher<sensor_msgs::msg::Range>>(s.first, this->create_publisher<sensor_msgs::msg::Range>("sensor/",10)));
        
-            sensor_data.insert(std::pair<int, sensor_msgs::msg::Range>(s.first, sensor_msgs::msg::Range()));
-            sensor_data.at(s.first).header.frame_id = s.second;
+            // sensor_data.insert(std::pair<int, sensor_msgs::msg::Range>(s.first, sensor_msgs::msg::Range()));
+            // sensor_data.at(s.first).header.frame_id = s.second;
             //sensor_data.at(s.first).header.stamp = s.second;
-            sensor_data.at(s.first).field_of_view = 0.00872664626;
-            sensor_data.at(s.first).min_range = 0.1;
-            sensor_data.at(s.first).max_range = 180;
+            // sensor_data.at(s.first).field_of_view = 0.00872664626;
+            // sensor_data.at(s.first).min_range = 0.1;
+            // sensor_data.at(s.first).max_range = 180;
             // sensor_data.at(s.first).
 
             // tabpub.at(s.first). //(this->create_publisher<sensor_msgs::msg::Range>("sensor/",10));
         }
-        RCLCPP_INFO(this->get_logger(),"Begin While loop");
+        RCLCPP_INFO(ros_node->get_logger(),"Begin While loop");
         while (rclcpp::ok())
         {
             process_sensor_data();
@@ -202,11 +195,11 @@ void TF03::process_sensor_data()
         }
         catch (SerialPortNotOpen e)
         {
-            RCLCPP_ERROR(this->get_logger(),"Serial port is not open");
+            RCLCPP_ERROR(ros_node->get_logger(),"Serial port is not open");
         }
         catch (SerialPortReadTimeout e)
         {
-            RCLCPP_WARN(this->get_logger(),"No data for %.2f s", (float)timeout_ms / 1000);
+            RCLCPP_WARN(ros_node->get_logger(),"No data for %.2f s", (float)timeout_ms / 1000);
         }
         incoming_buffer.push_back(read_byte);
         if (is_buffer_correct(&incoming_buffer))
@@ -225,7 +218,7 @@ void TF03::process_sensor_data()
         {
             if (incoming_buffer.size() > 9)
             {
-                RCLCPP_ERROR_ONCE(this->get_logger(),"Buffer not correct and oversized, size=%ld", incoming_buffer.size());
+                RCLCPP_ERROR_ONCE(ros_node->get_logger(),"Buffer not correct and oversized, size=%ld", incoming_buffer.size());
                 
             }
         }
@@ -240,18 +233,17 @@ void TF03::process_sensor_data()
             d = 0;
         }
         int nbytes = read(can_socket, &publish_frame, sizeof(struct can_frame));
-        for (auto id : can_transmit_id)
+        
+        if (can_transmit_id == publish_frame.can_id)
         {
-            if (id == publish_frame.can_id)
+            incoming_buffer.clear();
+            for (int i = 0; i < publish_frame.can_dlc; i++)
             {
-                incoming_buffer.clear();
-                for (int i = 0; i < publish_frame.can_dlc; i++)
-                {
-                    incoming_buffer.push_back(publish_frame.data[i]);
-                }
-                process_incoming_buffer(incoming_buffer, id);
+                incoming_buffer.push_back(publish_frame.data[i]);
             }
+            process_incoming_buffer(incoming_buffer, can_transmit_id);
         }
+        
         break;
     }
 }
@@ -330,98 +322,98 @@ void TF03::process_incoming_buffer(std::vector<u_char> data, int can_id)
         {
             // Data is ordered as
             // 5A 07 01 V1 V2 V3 SU
-            RCLCPP_INFO(this->get_logger(),"Version is %d.%d.%d", (uint16_t)data[5], (uint16_t)data[4], (uint16_t)data[3]);
+            RCLCPP_INFO(ros_node->get_logger(),"Version is %d.%d.%d", (uint16_t)data[5], (uint16_t)data[4], (uint16_t)data[3]);
             if (parameters[0].command == tf_03_command_id::version)
             {
                 parameters[0].command_success = true;
             }
             else
             {
-                RCLCPP_WARN(this->get_logger(),"Expected confirmation for %#2x, received %#2x instead", tf_03_command_id::version, parameters[0].command);
+                RCLCPP_WARN(ros_node->get_logger(),"Expected confirmation for %#2x, received %#2x instead", tf_03_command_id::version, parameters[0].command);
             }
         }
         else if (data[2] == tf_03_command_id::system_reset) // Command: reset
         {
             // Response is
             // 5A 05 02 00 61
-            RCLCPP_INFO(this->get_logger(),"Reset staus is %d", (uint16_t)data[3]);
+            RCLCPP_INFO(ros_node->get_logger(),"Reset staus is %d", (uint16_t)data[3]);
             if (parameters[0].command == tf_03_command_id::system_reset)
             {
                 parameters[0].command_success = true;
             }
             else
             {
-                RCLCPP_WARN(this->get_logger(),"Expected confirmation for %#2x, received %#2x instead", tf_03_command_id::system_reset, parameters[0].command);
+                RCLCPP_WARN(ros_node->get_logger(),"Expected confirmation for %#2x, received %#2x instead", tf_03_command_id::system_reset, parameters[0].command);
             }
         }
         else if (data[2] == tf_03_command_id::output_format)
         {
             // Response is:
             // 5A 05 45 00 A4
-            RCLCPP_INFO(this->get_logger(),"Output format status is %d", (uint16_t)data[3]);
+            RCLCPP_INFO(ros_node->get_logger(),"Output format status is %d", (uint16_t)data[3]);
             if (parameters[0].command == tf_03_command_id::output_format)
             {
                 parameters[0].command_success = true;
             }
             else
             {
-                RCLCPP_WARN(this->get_logger(),"Expected confirmation for %#2x, received %#2x instead", tf_03_command_id::output_format, parameters[0].command);
+                RCLCPP_WARN(ros_node->get_logger(),"Expected confirmation for %#2x, received %#2x instead", tf_03_command_id::output_format, parameters[0].command);
             }
         }
         else if (data[2] == tf_03_command_id::transmit_can_id)
         {
             // Response is:
             // 5A 05 50 00 AF
-            RCLCPP_INFO(this->get_logger(),"Transmit CAN ID status is %d", (uint16_t)data[3]);
+            RCLCPP_INFO(ros_node->get_logger(),"Transmit CAN ID status is %d", (uint16_t)data[3]);
             if (parameters[0].command == tf_03_command_id::transmit_can_id)
             {
                 parameters[0].command_success = true;
             }
             else
             {
-                RCLCPP_WARN(this->get_logger(),"Expected confirmation for %#2x, received %#2x instead", tf_03_command_id::transmit_can_id, parameters[0].command);
+                RCLCPP_WARN(ros_node->get_logger(),"Expected confirmation for %#2x, received %#2x instead", tf_03_command_id::transmit_can_id, parameters[0].command);
             }
         }
         else if (data[2] == tf_03_command_id::receive_can_id)
         {
             // Response is:
             // 5A 05 51 00 B0
-            RCLCPP_INFO(this->get_logger(),"Receive CAN ID status is %d", (uint16_t)data[3]);
+            RCLCPP_INFO(ros_node->get_logger(),"Receive CAN ID status is %d", (uint16_t)data[3]);
             if (parameters[0].command == tf_03_command_id::receive_can_id)
             {
                 parameters[0].command_success = true;
             }
             else
             {
-                RCLCPP_WARN(this->get_logger(),"Expected confirmation for %#2x, received %#2x instead", tf_03_command_id::receive_can_id, parameters[0].command);
+                RCLCPP_WARN(ros_node->get_logger(),"Expected confirmation for %#2x, received %#2x instead", tf_03_command_id::receive_can_id, parameters[0].command);
             }
         }
         else if (data[2] == tf_03_command_id::save_settings)
         {
             // success:     5A 05 11 00 70
             // fail:        5A 05 11 ER SU
-            RCLCPP_INFO(this->get_logger(),"Save settings status is %d", (uint16_t)data[3]);
+            RCLCPP_INFO(ros_node->get_logger(),"Save settings status is %d", (uint16_t)data[3]);
             if (parameters[0].command == tf_03_command_id::save_settings)
             {
                 parameters[0].command_success = true;
             }
             else
             {
-                RCLCPP_WARN(this->get_logger(),"Expected confirmation for %#2x, received %#2x instead", tf_03_command_id::save_settings, parameters[0].command);
+                RCLCPP_WARN(ros_node->get_logger(),"Expected confirmation for %#2x, received %#2x instead", tf_03_command_id::save_settings, parameters[0].command);
             }
         }
         else if (data[2] == tf_03_command_id::factory_settings)
         {
             // success      5A 05 10 00 6F
             // fail         5A 05 10 ER SU
-            RCLCPP_INFO(this->get_logger(),"Factory reset status is %d", (uint16_t)data[3]);
+            RCLCPP_INFO(ros_node->get_logger(),"Factory reset status is %d", (uint16_t)data[3]);
             if (parameters[0].command == tf_03_command_id::factory_settings)
             {
                 parameters[0].command_success = true;
             }
             else
             {
-                RCLCPP_WARN(this->get_logger(),"Expected confirmation for %#2x, received %#2x instead", tf_03_command_id::factory_settings, parameters[0].command);
+                RCLCPP_WARN(ros_node->get_logger(),"Expected confirmation for %#2x, received %#2x instead", tf_03_command_id::factory_settings, parameters[0].command);
             }
         }
     }
@@ -475,7 +467,7 @@ int TF03::init_sensor(tf_03_interface i, std::string device_name)
             }
             catch (LibSerial::OpenFailed)
             {
-                RCLCPP_ERROR(this->get_logger(),"Can not open serial port");
+                RCLCPP_ERROR(ros_node->get_logger(),"Can not open serial port");
                 return 1;
             }
         }
@@ -487,7 +479,7 @@ int TF03::init_sensor(tf_03_interface i, std::string device_name)
         can_socket = socket(PF_CAN, SOCK_RAW, CAN_RAW);
         if (can_socket == -1)
         {
-            RCLCPP_ERROR(this->get_logger(),"Can not open CAN socket");
+            RCLCPP_ERROR(ros_node->get_logger(),"Can not open CAN socket");
             return 1;
         }
         else
@@ -520,21 +512,21 @@ void TF03::send_command(tf_03_interface i, tf_03_command_id command_id, int64_t 
     switch (command_id)
     {
     case tf_03_command_id::version:
-        RCLCPP_INFO(this->get_logger(),"TF03::send_command: version");
+        RCLCPP_INFO(ros_node->get_logger(),"TF03::send_command: version");
         command.push_back(tf_03_command_len.at(command_id));
         command.push_back(command_id);
         command.push_back(get_checksum(command));
         write_command_data(i, command);
         break;
     case tf_03_command_id::system_reset:
-        RCLCPP_INFO(this->get_logger(),"TF03::send_command: system_reset");
+        RCLCPP_INFO(ros_node->get_logger(),"TF03::send_command: system_reset");
         command.push_back(tf_03_command_len.at(command_id));
         command.push_back(command_id);
         command.push_back(get_checksum(command));
         write_command_data(i, command);
         break;
     case tf_03_command_id::save_settings:
-        RCLCPP_INFO(this->get_logger(),"TF03::send_command:save settings");
+        RCLCPP_INFO(ros_node->get_logger(),"TF03::send_command:save settings");
         // command: 5A 04 11 6F
         command.push_back(tf_03_command_len.at(command_id));
         command.push_back(command_id);
@@ -542,7 +534,7 @@ void TF03::send_command(tf_03_interface i, tf_03_command_id command_id, int64_t 
         write_command_data(i, command);
         break;
     case tf_03_command_id::output_format:
-        RCLCPP_INFO(this->get_logger(),"TF03::send_command: output format");
+        RCLCPP_INFO(ros_node->get_logger(),"TF03::send_command: output format");
         // Serial:  5A 05 45 01 A5
         // CAN:     5A 05 45 02 A6
         command.push_back(tf_03_command_len.at(command_id));
@@ -553,7 +545,7 @@ void TF03::send_command(tf_03_interface i, tf_03_command_id command_id, int64_t 
         break;
     case tf_03_command_id::transmit_can_id:
     {
-        RCLCPP_INFO(this->get_logger(),"TF03::send_command: transmit CAN ID");
+        RCLCPP_INFO(ros_node->get_logger(),"TF03::send_command: transmit CAN ID");
         //          5A 08 50 H1 H2 H3 H4 SU
         command.push_back(tf_03_command_len.at(command_id));
         command.push_back(command_id);
@@ -573,7 +565,7 @@ void TF03::send_command(tf_03_interface i, tf_03_command_id command_id, int64_t 
     break;
     case tf_03_command_id::receive_can_id:
     {
-        RCLCPP_INFO(this->get_logger(),"TF03::send_command: receive CAN ID");
+        RCLCPP_INFO(ros_node->get_logger(),"TF03::send_command: receive CAN ID");
         command.push_back(tf_03_command_len.at(command_id));
         command.push_back(command_id);
         // ID=(H4 << 24)+(H3 << 16)+(H2 << 8)+H1
@@ -591,7 +583,7 @@ void TF03::send_command(tf_03_interface i, tf_03_command_id command_id, int64_t 
     }
     break;
     default:
-        RCLCPP_ERROR(this->get_logger(),"TF03::send_command: COMMAND NOT KNOWN");
+        RCLCPP_ERROR(ros_node->get_logger(),"TF03::send_command: COMMAND NOT KNOWN");
 
         break;
     }

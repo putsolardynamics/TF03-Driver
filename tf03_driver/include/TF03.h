@@ -1,3 +1,4 @@
+#pragma once
 #include <math.h>
 #include <iostream>
 #include <string>
@@ -58,20 +59,15 @@ struct parameter_config
     int64_t argument;
 };
 
-class TF03 : public rclcpp::Node
+class TF03
 {
-
-//     SubscriberPublisher()
-//   : Node("minimal_subscriber")
-
-
 public:
-    // TF03();
-    // ~TF03();
-   TF03(); //: Node("tf03driver");
+    TF03();
+    TF03(rclcpp::Node*);
     ~TF03(){};
 
 private:
+    rclcpp::Node* ros_node;
     int init_sensor(tf_03_interface i, std::string device_name);
     void send_command(tf_03_interface i, tf_03_command_id command_id, int64_t command_argument = 0);
     void write_command_data(tf_03_interface i, std::vector<u_char> data);
@@ -96,7 +92,7 @@ private:
     std::string sensor_interface;
     std::string can_device;
     int can_receive_id;
-    std::vector<int> can_transmit_id;
+    int can_transmit_id;
     std::vector<std::string> sensor_frame;
     std::map<int, std::string> sensors;
     std::string serial_port;
